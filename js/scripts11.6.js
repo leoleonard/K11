@@ -87,21 +87,23 @@ $(function() {
      }
 
 
-     function initSortable() {
-       $('.column-card-list').sortable({
-        connectWith: '.column-card-list',
-        placeholder: 'card-placeholder'
-      }).disableSelection();
- };
+
 
      var board = {
-       name: 'Kanban Board',
+       name: 'Tablica',
        addColumn: function(column) {
          this.$element.append(column.$element);
          initSortable();
        },
        $element: $('#board .column-container')
 };
+
+      function initSortable() {
+        $('.column-card-list').sortable({
+          connectWith: '.column-card-list',
+          placeholder: 'card-placeholder'
+        }).disableSelection();
+      };
 
       $('.create-column')
       .click(function(){
@@ -123,10 +125,11 @@ board.addColumn(doneColumn);
 // CREATING CARDS
 var card1 = new Card('New task');
 var card2 = new Card('Create kanban boards');
-
+var card3 = new Card("Things have been done");
 // ADDING CARDS TO COLUMNS
 todoColumn.addCard(card1);
 doingColumn.addCard(card2);
+doneColumn.addCard(card3);
 
 
 })
