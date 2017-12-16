@@ -1,1 +1,7 @@
+body {
+  background-color: lightgrey;
+}
 
+button {
+  margin: 50px;
+}
