@@ -28,3 +28,13 @@ ul li {
   flex: 1;
   border: 1px solid black;
 }
+
+.card {
+  margin-right: 40px;
+  padding: 15px;
+  background-color: lightgrey;
+}
+
+.card-description {
+  text-decoration: underline;
+}

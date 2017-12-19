@@ -1,6 +1,4 @@
 $(function() {
-    // here we will put the code of our application
-
     function randomString() {
         var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
         var str = '';
@@ -13,7 +11,7 @@ $(function() {
 //COLUMN
 
     function Column(name) {
-    var self = this; // useful for nested functions
+    var self = this;
 
     this.id = randomString();
     this.name = name;
@@ -64,11 +62,10 @@ $(function() {
         this.$element = createCard();
 
         function createCard() {
-
           //tworzenie elementow karty
           var $card = $('<li>').addClass('card');
           var $cardDescription = $('<p>').addClass('card-description').text(self.description);
-          var $cardDelete = $('<button>').addClass('btn-delete').text('x');
+          var $cardDelete = $('<button>').addClass('btn-delete').text('delete a card');
           // podpisanie zdarzen
           $cardDelete.click(function(){
                       self.removeCard();
@@ -84,9 +81,7 @@ $(function() {
 	       removeCard: function() {
 		     this.$element.remove();
        }
-     }
-
-
+     };
 
 
      var board = {
@@ -103,10 +98,9 @@ $(function() {
           connectWith: '.column-card-list',
           placeholder: 'card-placeholder'
         }).disableSelection();
-      };
+};
 
-      $('.create-column')
-      .click(function(){
+      $('.create-column').click(function(){
         var name = prompt('Enter a column name');
         var column = new Column(name);
         board.addColumn(column);
